@@ -215,6 +215,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
+#ifdef COMBO_ENABLE
+enum combos {
+    HYPR_LEFT,
+    HYPR_RIGHT,
+};
+
+const uint16_t PROGMEM hypr_left_combo[]  = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM hypr_right_combo[] = {KC_COMM, KC_DOT, COMBO_END};
+
+combo_t key_combos[] = {
+    [HYPR_LEFT]  = COMBO(hypr_left_combo, KC_F18),
+    [HYPR_RIGHT] = COMBO(hypr_right_combo, KC_F18),
+};
+#endif
+
 #ifdef POINTING_DEVICE_ENABLE
 #    ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {

@@ -32,3 +32,7 @@
 // - `CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD`
 // #define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 #endif // POINTING_DEVICE_ENABLE
+
+#ifdef COMBO_ENABLE
+#    define COMBO_TERM 50 // default is 50 ms; adjust if misfiring or hard to trigger
+#endif                    // COMBO_ENABLE
